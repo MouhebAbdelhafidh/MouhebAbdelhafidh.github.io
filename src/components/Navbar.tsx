@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl text-indigo-600 dark:text-indigo-400">
-            Mouheb<span className="text-gray-800 dark:text-gray-200">.dev</span>
+            Mouheb<span className="text-gray-800 dark:text-gray-200"> Abdelhafidh</span>
           </div>
           
           {/* Desktop Navigation */}

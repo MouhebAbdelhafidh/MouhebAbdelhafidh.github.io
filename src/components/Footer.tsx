@@ -10,10 +10,11 @@ const Footer: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <div className="font-bold text-2xl mb-4">Mouheb<span className="text-indigo-400">.dev</span></div>
+              <div className="font-bold text-2xl mb-4">Mouheb<span className="text-indigo-400"> Abdelhafidh</span></div>
               <p className="text-gray-400 mb-6 max-w-md">
-                Data scientist and machine learning engineer specializing in building intelligent systems
-                that solve real-world problems through data-driven approaches.
+                Final-year engineering student curious about AI agents,
+                computer vision and deep learning. I develop intelligent systems that leverage
+                data-driven insights to address complex challenges.
               </p>
             </div>
             
@@ -42,28 +43,16 @@ const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <ul className="space-y-2">
                 <li className="text-gray-400">
-                  <span className="block">Email: hello@mouheb.dev</span>
+                  <span className="block">Email: mouheb.abdelhafidh@esprit.tn</span>
                 </li>
                 <li className="text-gray-400">
-                  <span className="block">Phone: +1 (123) 456-7890</span>
+                  <span className="block">Phone: +216 - 28 053 250</span>
                 </li>
                 <li className="text-gray-400">
-                  <span className="block">San Francisco, California</span>
+                  <span className="block">Ariana, Tunisia</span>
                 </li>
               </ul>
             </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Mouheb. All rights reserved.
-            </p>
-            
-            <p className="text-gray-400 text-sm flex items-center mt-4 md:mt-0">
-              Built with 
-              <Heart className="h-4 w-4 text-red-500 mx-1" />
-              using React & TailwindCSS
-            </p>
           </div>
         </div>
       </div>

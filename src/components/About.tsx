@@ -3,25 +3,26 @@ import { Calendar, MapPin, Briefcase, GraduationCap } from 'lucide-react';
 
 const About: React.FC = () => {
   const timelineItems = [
+    
     {
-      title: 'Master in Data Science',
-      organization: 'University of Technology',
-      date: '2022 - Present',
-      description: 'Specialized in machine learning algorithms and deep learning applications.',
-      icon: <GraduationCap size={18} />,
-    },
-    {
-      title: 'Data Analyst Intern',
-      organization: 'Tech Innovations Ltd',
-      date: 'Summer 2022',
-      description: 'Worked on predictive models for customer behavior and market trends.',
+      title: 'Data science / AI Intern',
+      organization: '',
+      date: 'Summer 2025',
+      description: 'Looking for the opportunity to apply my skills in a real-world data science project.',
       icon: <Briefcase size={18} />,
     },
     {
-      title: 'Bachelor in Computer Science',
-      organization: 'University of Engineering',
-      date: '2019 - 2022',
-      description: 'Focus on algorithms, data structures, and software engineering principles.',
+      title: 'Engineering in Data Science',
+      organization: 'ESPRIT',
+      date: '2021 - Present',
+      description: 'Specialized in AI agents, computer vision, and deep learning.',
+      icon: <GraduationCap size={18} />,
+    },
+    {
+      title: 'High School',
+      organization: 'Lycée Abu Alkacem Chebbi Tozeur',
+      date: '2018 - 2021',
+      description: 'High school diploma with a focus on mathematics.',
       icon: <GraduationCap size={18} />,
     },
   ];
@@ -52,7 +53,7 @@ const About: React.FC = () => {
                       {/* Photo frame */}
                       <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg transform group-hover:scale-105 transition-transform duration-300">
                         <img
-                          src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                          src="/images/Mouheb_Abdelhafidh_Photo.jpg"
                           alt="Profile"
                           className="w-full h-full object-cover"
                         />
@@ -66,21 +67,21 @@ const About: React.FC = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="font-bold text-xl mb-4 text-gray-900 dark:text-white">Mouheb</h3>
+                  <h3 className="font-bold text-xl mb-4 text-gray-900 dark:text-white">Mouheb Abdelhafidh</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    I'm a data science student passionate about machine learning, AI, and developing 
-                    data-driven solutions that address real-world challenges. My focus is on creating 
-                    models that are not only accurate but also interpretable and ethical.
+                    I’m a final-year engineering student curious about AI agents,
+                    computer vision and deep learning. I develop intelligent systems that leverage
+                    data-driven insights to address complex challenges.
                   </p>
                   
                   <div className="space-y-3">
                     <div className="flex items-center text-gray-600 dark:text-gray-300">
                       <Calendar size={18} className="mr-3 text-indigo-600 dark:text-indigo-400" />
-                      <span>Born: June 15, 1999</span>
+                      <span>Born: January, 14 2003</span>
                     </div>
                     <div className="flex items-center text-gray-600 dark:text-gray-300">
                       <MapPin size={18} className="mr-3 text-indigo-600 dark:text-indigo-400" />
-                      <span>Location: San Francisco, CA</span>
+                      <span>Location: Ariana, Tunisia</span>
                     </div>
                   </div>
                 </div>

@@ -8,29 +8,29 @@ const skills = [
     category: 'programming'
   },
   {
+    name: 'R',
+    icon: 'public/images/RLogo.png',
+    category: 'programming'
+  },
+  {
+    name: 'C++',
+    icon: 'public/images/C++Logo.png',
+    category: 'programming'
+  },
+  {
     name: 'PyTorch',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
     category: 'frameworks'
   },
   {
-    name: 'TensorFlow',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+    name: 'FastAPI',
+    icon: 'public/images/FastAPILogo.png',
     category: 'frameworks'
   },
   {
-    name: 'Scikit-learn',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg',
-    category: 'frameworks'
-  },
-  {
-    name: 'Pandas',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
-    category: 'frameworks'
-  },
-  {
-    name: 'NumPy',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg',
-    category: 'frameworks'
+    name: 'Git',
+    icon: 'public/images/GitLogo.png',
+    category: 'tools'
   }
 ];
 

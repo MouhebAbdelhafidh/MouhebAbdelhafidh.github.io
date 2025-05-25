@@ -6,27 +6,11 @@ import { useInView } from '../hooks/useInView';
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'Demystifying Neural Networks: A Visual Guide',
-    excerpt: 'An intuitive explanation of how neural networks work, with interactive visualizations to help understand the concepts.',
-    date: 'May 15, 2023',
+    title: 'MARMT:The Memory-Augmented Marketing Maestro - ReAct RAG with strategic retrieval Selection',
+    excerpt: 'A scientific paper about the implementation of a ReAct-based RAG agent for marketing strategy, outperforming traditional RAG systems.',
+    date: 'May 20, 2025',
     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    url: '#'
-  },
-  {
-    id: '2',
-    title: 'Practical Guide to Time Series Forecasting',
-    excerpt: 'Learn how to implement effective time series forecasting models for business applications using Python.',
-    date: 'April 2, 2023',
-    image: 'https://images.pexels.com/photos/7567607/pexels-photo-7567607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    url: '#'
-  },
-  {
-    id: '3',
-    title: 'Ethical Considerations in AI Development',
-    excerpt: 'Exploring the ethical challenges in AI and machine learning, with practical guidelines for responsible development.',
-    date: 'March 18, 2023',
-    image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    url: '#'
+    url: 'documents/MARMT_ The Memory-Augmented Marketing Maestro - ReAct RAG with strategic retrieval Selection.pdf'
   }
 ];
 
@@ -66,12 +50,15 @@ const BlogPostCard: React.FC<{ post: BlogPost; index: number }> = ({ post, index
         </p>
         
         <a 
-          href={post.url} 
-          className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-300"
-        >
-          Read more
-          <ArrowUpRight className="ml-1 h-4 w-4" />
-        </a>
+  href={post.url} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-300"
+>
+  Read more
+  <ArrowUpRight className="ml-1 h-4 w-4" />
+</a>
+
       </div>
     </div>
   );

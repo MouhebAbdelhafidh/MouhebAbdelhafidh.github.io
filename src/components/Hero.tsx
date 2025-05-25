@@ -85,30 +85,36 @@ const Hero: React.FC = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             <span className="block">Hi, I'm Mouheb</span>
             <span className="block mt-2 text-indigo-600 dark:text-indigo-400">
-              Data Scientist & ML Enthusiast
+              Data Science & AI Student
             </span>
           </h1>
           
           <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Building intelligent systems that make an impact through data-driven insights 
-            and machine learning solutions.
+            Turning data into smart AI solutions that drive real-world impact
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <div className="flex gap-4">
               <a 
-                href="/cv_en.pdf" 
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-              >
+                  href="/documents/Mouheb_Abdelhafidh_Resume.pdf"
+                  download="Mouheb_Abdelhafidh_Resume.pdf"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                >
                 <FileDown className="mr-2 h-5 w-5" />
-                Download CV (EN)
+                Download CV (EN)  
               </a>
+
+
+
               <a 
-                href="/cv_fr.pdf" 
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-              >
+                  href="/documents/Mouheb_Abdelhafidh_CV.pdf"
+                  download="Mouheb_Abdelhafidh_CV.pdf"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                >
                 <FileDown className="mr-2 h-5 w-5" />
-                Télécharger CV (FR)
+                Telecharger CV (FR)  
               </a>
             </div>
             <a 

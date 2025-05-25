@@ -6,51 +6,27 @@ import { useInView } from '../hooks/useInView';
 const certifications: Certification[] = [
   {
     id: '1',
-    title: 'Deep Learning Specialization',
-    issuer: 'Coursera - deeplearning.ai',
-    date: 'December 2022',
-    url: '#',
-    image: 'https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    title: 'Fundamentals of Agents',
+    issuer: 'Hugging Face',
+    date: 'April 2025',
+    url: 'https://huggingface.co/spaces/agents-course/unit_1_quiz/discussions/245#67eea1f11fe2bdff80ff259f',
+    image: 'https://huggingface.co/front/thumbnails/learn/agents-course.png'
   },
   {
     id: '2',
-    title: 'Machine Learning Engineer Nanodegree',
-    issuer: 'Udacity',
-    date: 'August 2022',
-    url: '#',
-    image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    title: 'Fundamentals of Deep Learning',
+    issuer: 'NVIDIA',
+    date: 'March 2025',
+    url: 'https://learn.nvidia.com/certificates?id=OXk9fMyVTFy_DtDV2gLWPg#',
+    image: 'https://i.redd.it/i96pa8te6d771.jpg'
   },
   {
     id: '3',
-    title: 'TensorFlow Developer Certificate',
-    issuer: 'Google',
-    date: 'March 2023',
-    url: '#',
-    image: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    id: '4',
-    title: 'Data Science Professional Certificate',
+    title: 'Artificial Intelligence fundamentals',
     issuer: 'IBM',
-    date: 'January 2023',
-    url: '#',
-    image: 'https://images.pexels.com/photos/7567434/pexels-photo-7567434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    id: '5',
-    title: 'SQL for Data Science',
-    issuer: 'UC Davis (Coursera)',
-    date: 'November 2022',
-    url: '#',
-    image: 'https://images.pexels.com/photos/5380769/pexels-photo-5380769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    id: '6',
-    title: 'AWS Machine Learning Specialty',
-    issuer: 'Amazon Web Services',
-    date: 'May 2023',
-    url: '#',
-    image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    date: 'August  2024',
+    url: 'https://www.credly.com/badges/d15e19fc-3205-43bf-be74-f48aa7c037a5/public_url',
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAdVBMVEUBAQH///8AAACoqKjx8fHExMQmJib8/PyioqJAQECCgoJfX1/W1tbc3NwFBQW7u7sdHR1GRkZvb294eHjNzc329vYXFxeSkpJOTk6vr6/Hx8csLCw6Ojqnp6fs7OwUFBTi4uJ0dHRbW1uYmJgwMDCIiIhpaWkBeMc6AAAGwklEQVR4nO2caWOyOhCFddTXpYpat7pVa9X//xMvoK2QTJIJRpTe8/RTYTIJxywzEKjVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQNejZDXgWJMbTPFfMv9J7WhxYoeiflKRq2q3F9jHzS4vVNgu8mC+TRq6yUViNaFwXsk8lOknNL7QHw3Ok/bD07SzICHstS86yH6ElaguvdpBK1BNaZ5gtN0pXooWzUM80XOjLVbRdPYniRg/XuSsWSNQ3SEQ0ddZWRYnq9WauVwgkam8MEu3cRYNLJL3KuySq11eZGVgwF9U7Bonc6gafi47bhoxFKtGhIbVXWJ5u/YjeXNbbxokitr0nZ00dQwcsrpFfhONhrhL5VXpHe8MqBEAA5APF0zyAl4KNfZ5Ead0+5vc7KdrYsArFcVFbwiWYixd9kbWJZjeVaCHx8rnTcrvNTFBuVtW46Mow9SIIbmLOmkSiDLGi0fUvzZFcopZyqUR9SbGqS1R/TzJamUTNuXKDYDOTFKtsAvLDUt6L6l/55Fd6Jya0RN3+QMT+Mou872XmRjetpBf1RF72HUWioaiK/riyCUjGjVeV/k0NqxAAgdG6qG+XZcJhp0dbHfIxU9bg8hzWAnPBVCGdVxx27N2l4NB50M8zeLM8rKGFZr5W51fNpD84KDYdzSTD8lcj2g0tdoNtOZM0TbQQ490mUUMzX6s9ZKlHLUpaQS1rjNP9vTdwsNpNyxlppUg063pJ1PmVaPi/kehTDXbsEu1/JBp9Vk+iWjGJVn4S/WQTTNteX6KCvWiimjgkGl7DcccTxmlJ07V7hc5ac/aRuqS5PToW8+uT7khm9nB8FGLNa/nohFVRUGmOSGYWUAYv7q2YKe/t8rWSUtJ+dru1bs785U5zDzUcPaRGAqPSupFXxeScHhj0NEHkRWAUeN+V6aI/tp08W9vdKXpXzV1s1eUs8TJxefmOBZi4XBv3I4XFd9FnsgsHB0ailbPUhsh5g71flbjIwTc3fTviopgGnZ02Lxk6ctG1nSE3t+kStdVHQTPNpt+shETevWjIThdML9KesrypB04vJNGXrRf5zUVLfn1kMotIPaDNRPpuPtPeyMDQaNxVGNl60VEzt2GIIOioW26UA2o9G9LKbEoKjJhww8/aTiA3Ps5B+fj9FPSk/OmpHcar/7JpvP9QKDSmnjbQaP2mot4jy5l3NXMLB9N2/LFmGmdk+sEbH3FCdmAOPkiVfGsfuui3+J+aWfRHZN2AEsdXI2bRf5gsudY+NnTk750yoWMsEVl2EsUdZqSd/hvRNa8RK5Gth35SZSTyz9HifFSSo6W96MPopBMLWBGJitwMeWduXes3Q5JeRHuTj2MikZaSlDUXdU+9PCfbGyd0UM1dnJgtAnTWzJLNxPRmcD5JbtXutMPnl0xACqUOIid23+ZCAFSC+wdaSBPjMHtmAqJje/RivgIPE7MOtGPbY56oQsvBXrNXAsIt+kf3toeeasIu+skJbv/6ZV8Ju+i/5EMiPXQUSKSG2Hx0nZxYM0nI5SlTdULHR23BukrE9K99VCmJCm7Bao+FEtWYp2fXDKYqEhUcaKpLi0T63r3xzxltLipLokNrmKdleymHepq5+sEY3URzSQvVYjj/WdnVU797Q+dLtcx3ZRIQgYlgl5qz8JOW/GoDiZ4KH6myeJqbvDgSecp9o0Zw2Fa+ZIXclyYiitxeDM0TtzqwRPumkGTFpclMas4zmyZ51shqcttIQL1bdbPbzpI4HLCVP4WWSNuHYiKV6O7Xh7eJl7nVZHRb0jaZAGiSkcj6qvUitET2dysyhJHo7CFRLglpZg7/aYmaOx+Jsh+Xa92225YtUbkDLX1N30Oi2zPHzHtsDom4LZV3STSQzrQhput9msXR3DbdNrP7vmh7rXAQZSWyrjGBp2vZ1vDbUiq3vsNLRqGIO+x+Z+Y5BKi3gIvbKiYuUc6LxCCL/Je9sxuR8R9HRemeK5+mBJ6to/LmouxFe0wll0O50VPuXEQ0XLUkrFqb9FG7zFpnuri1nObWmvKfLaLzqrVq5A/NbY2e2vaNFZKopLhouctKZDXNb/amf3X1c6rMjdksweOiEqLrdv3znB0rfhIlnwc7KhL9uQRk1tnl5gdPiXqXL3D9YYn23/+UF6C9JIqbWD89VyLRJ9wSkkcXvh+W/5x2xvoSw+x4zaJJ1NqpEpU5FyXLvoxdlGagRd6I1X+Xna0mbvOEcsDe1NAJiN+lBhDI7UUzv7N8eeBBDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/PgPp0SgBJXaPz8AAAAASUVORK5CYII='
   }
 ];
 

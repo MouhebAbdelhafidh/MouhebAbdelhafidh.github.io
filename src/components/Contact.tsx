@@ -6,18 +6,13 @@ import { useInView } from '../hooks/useInView';
 const socialLinks: SocialLink[] = [
   {
     platform: 'GitHub',
-    url: 'https://github.com/yourusername',
+    url: 'https://github.com/MouhebAbdelhafidh',
     icon: 'github'
   },
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
+    url: 'https://www.linkedin.com/in/mouheb-abdelhafidh-978282236/',
     icon: 'linkedin'
-  },
-  {
-    platform: 'Twitter',
-    url: 'https://twitter.com/yourusername',
-    icon: 'twitter'
   }
 ];
 
@@ -223,8 +218,8 @@ const Contact: React.FC = () => {
                   <Mail className="h-6 w-6 text-indigo-600 dark:text-indigo-400 mr-3 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
-                    <a href="mailto:hello@mouheb.dev" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
-                      hello@mouheb.dev
+                    <a href="mailto:mouheb.abdelhafidh@esprit.tn" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                      mouheb.abdelhafidh@esprit.tn
                     </a>
                   </div>
                 </li>
@@ -232,8 +227,8 @@ const Contact: React.FC = () => {
                   <Phone className="h-6 w-6 text-indigo-600 dark:text-indigo-400 mr-3 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Phone</p>
-                    <a href="tel:+11234567890" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
-                      +1 (123) 456-7890
+                    <a href="tel:+21628053250" className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                      +216 - 28 053 250
                     </a>
                   </div>
                 </li>
@@ -242,7 +237,7 @@ const Contact: React.FC = () => {
                   <div>
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Location</p>
                     <p className="text-gray-600 dark:text-gray-400">
-                      San Francisco, California
+                      Ariana, Tunisia
                     </p>
                   </div>
                 </li>
