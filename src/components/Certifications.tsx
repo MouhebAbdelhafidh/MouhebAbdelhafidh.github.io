@@ -6,6 +6,22 @@ import { useInView } from '../hooks/useInView';
 const certifications: Certification[] = [
   {
     id: '1',
+    title: '7th place in Code Red competetive programming contest',
+    issuer: 'ISTIC',
+    date: 'May 2025',
+    url: 'https://www.linkedin.com/posts/mouheb-abdelhafidh-978282236_codefroces-problemsolving-activity-7324538785151524864-Zk2w?utm_source=share&utm_medium=member_desktop&rcm=ACoAADrF0uwBRiktbRJLbANocb8aKChy65QwuWI',
+    image: 'images/CodeRedPic.jpg'
+  },
+  {
+    id: '2',
+    title: '8th place in CatForces competetive programming contest',
+    issuer: 'IPS (ISSAM Problem Solving)',
+    date: 'April 2025',
+    url: 'https://www.linkedin.com/posts/mouheb-abdelhafidh-978282236_catforces-competitive-programming-9th-place-activity-7323272204018778112-ZOYg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADrF0uwBRiktbRJLbANocb8aKChy65QwuWI',
+    image: 'images/CatForcesPic.png'
+  },
+  {
+    id: '3',
     title: 'Fundamentals of Agents',
     issuer: 'Hugging Face',
     date: 'April 2025',
@@ -13,7 +29,7 @@ const certifications: Certification[] = [
     image: 'https://huggingface.co/front/thumbnails/learn/agents-course.png'
   },
   {
-    id: '2',
+    id: '4',
     title: 'Fundamentals of Deep Learning',
     issuer: 'NVIDIA',
     date: 'March 2025',
@@ -21,7 +37,7 @@ const certifications: Certification[] = [
     image: 'https://i.redd.it/i96pa8te6d771.jpg'
   },
   {
-    id: '3',
+    id: '5',
     title: 'Artificial Intelligence fundamentals',
     issuer: 'IBM',
     date: 'August  2024',
@@ -72,8 +88,7 @@ const CertificationCard: React.FC<{ certification: Certification; index: number 
           <a 
             href={certification.url} 
             className="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300"
-          >
-            View Certificate
+          >View
             <ExternalLink className="ml-1 h-4 w-4" />
           </a>
         )}
@@ -95,12 +110,11 @@ const Certifications: React.FC = () => {
           }`}
         >
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-            Certifications & Courses
+            Certifications & Achivements
           </h2>
           <div className="w-20 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Continuous learning is essential in the fast-evolving field of data science.
-            Here are some of the courses and certifications I've completed to stay at the forefront.
+            Here are some of the certifications and achivements in Data science and competetive programming.
           </p>
         </div>
         
