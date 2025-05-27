@@ -88,9 +88,9 @@ const Contact: React.FC = () => {
           </p>
         </div>
         
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mmm">
           {/* Contact Form */}
-          <div 
+          {/* <div 
             ref={ref}
             className={`md:col-span-3 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition-all duration-500 ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
                 )}
               </div>
             </form>
-          </div>
+          </div> */}
           
           {/* Contact Info */}
           <div 
