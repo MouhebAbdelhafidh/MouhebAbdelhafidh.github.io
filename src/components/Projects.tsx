@@ -31,8 +31,8 @@ const projects: Project[] = [
   },
   {
     id: '4',
-    title: 'COVID-19  Deaths forecasting ',
-    description: 'Time Series Statistical study to predict Covid19 deaths .',
+    title: 'COVID-19  Deaths forecasting',
+    description: 'Time Series Statistical study to predict Covid19 deaths.',
     image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     tags: ['Time series', 'Statistics', 'R'],
     githubUrl: 'https://github.com/MouhebAbdelhafidh/Covid19-Deaths-Time-Series-Forecasting'
