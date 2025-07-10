@@ -5,10 +5,10 @@ const About: React.FC = () => {
   const timelineItems = [
     
     {
-      title: 'Data science / AI Intern',
-      organization: '',
-      date: 'Summer 2025',
-      description: 'Looking for the opportunity to apply my skills in a real-world data science project.',
+      title: 'AI Intern',
+      organization: 'ACTIA Engineering Services',
+      date: 'July 2025 - Present',
+      description: 'Building an ADAS system using radars fusion.',
       icon: <Briefcase size={18} />,
     },
     {
@@ -20,7 +20,7 @@ const About: React.FC = () => {
     },
     {
       title: 'High School',
-      organization: 'Lycée Abu Alkacem Chebbi Tozeur',
+      organization: 'Abu Alkacem Chebbi High school Tozeur',
       date: '2018 - 2021',
       description: 'High school diploma with a focus on mathematics.',
       icon: <GraduationCap size={18} />,
@@ -70,8 +70,7 @@ const About: React.FC = () => {
                   <h3 className="font-bold text-xl mb-4 text-gray-900 dark:text-white">Mouheb Abdelhafidh</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-6">
                     I’m a final-year engineering student curious about AI agents,
-                    computer vision and deep learning. I develop intelligent systems that leverage
-                    data-driven insights to address complex challenges.
+                    computer vision and deep learning with a problem solving mindset and a solid background in mathematics.
                   </p>
                   
                   <div className="space-y-3">
