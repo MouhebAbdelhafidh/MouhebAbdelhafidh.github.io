@@ -12,9 +12,8 @@ const Footer: React.FC = () => {
             <div className="md:col-span-2">
               <div className="font-bold text-2xl mb-4">Mouheb<span className="text-indigo-400"> Abdelhafidh</span></div>
               <p className="text-gray-400 mb-6 max-w-md">
-                Final-year engineering student curious about AI agents,
-                computer vision and deep learning. I develop intelligent systems that leverage
-                data-driven insights to address complex challenges.
+                I’m a final-year engineering student curious about AI agents, 
+                computer vision and deep learning with a problem solving mindset and a solid background in mathematics.
               </p>
             </div>
             
