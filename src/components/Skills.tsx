@@ -24,7 +24,7 @@ const skills = [
   },
   {
     name: 'LangChain',
-    icon: 'public/images/LangchainLogo.png',
+    icon: 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/langchain-ipuhh4qo1jz5ssl4x0g2a.png/langchain-dp1uxj2zn3752pntqnpfu2.png?_a=DATAg1AAZAA0',
     category: 'frameworks'
   },
   {
