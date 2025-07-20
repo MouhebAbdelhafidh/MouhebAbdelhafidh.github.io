@@ -9,7 +9,7 @@ const skills = [
   },
   {
   name: 'CrewAI',
-  icon: 'public/images/CrewAILogo.png',
+  icon: 'https://miro.medium.com/v2/resize:fit:1400/0*-7HC-GJCxjn-Dm7i.png',
   category: 'AI Framework'
   },
   {
