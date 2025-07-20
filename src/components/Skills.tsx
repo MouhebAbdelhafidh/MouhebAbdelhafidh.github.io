@@ -3,28 +3,28 @@ import { useInView } from '../hooks/useInView';
 
 const skills = [
   {
-    name: 'Python',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-    category: 'programming'
-  },
-  {
-    name: 'R',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
-    category: 'programming'
-  },
-  {
-    name: 'C++',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-    category: 'programming'
-  },
-  {
     name: 'PyTorch',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
     category: 'frameworks'
   },
   {
-    name: 'FastAPI',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+  name: 'CrewAI',
+  icon: 'public/images/CrewAILogo.png',
+  category: 'AI Framework'
+  },
+  {
+    name: 'MCP',
+    icon: 'public/images/MCPLogo.png',
+    category: 'AI Framework'
+  },
+  {
+    name: 'Llama Index',
+    icon: 'public/images/LlamaIndexLogo.png',
+    category: 'AI Framework'
+  },
+  {
+    name: 'LangChain',
+    icon: 'public/images/LangchainLogo.png',
     category: 'frameworks'
   },
   {
@@ -79,8 +79,7 @@ const Skills: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            My technical toolkit encompasses programming languages and machine learning frameworks
-            for end-to-end data science solutions.
+            My technical toolkit for end-to-end AI solutions.
           </p>
         </div>
         
