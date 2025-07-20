@@ -14,12 +14,12 @@ const skills = [
   },
   {
     name: 'MCP',
-    icon: 'public/images/MCPLogo.png',
+    icon: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/mcp.png',
     category: 'AI Framework'
   },
   {
     name: 'Llama Index',
-    icon: 'public/images/LlamaIndexLogo.png',
+    icon: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/llamaindex-color.png',
     category: 'AI Framework'
   },
   {
