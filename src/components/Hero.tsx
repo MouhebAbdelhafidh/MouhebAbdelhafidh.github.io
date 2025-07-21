@@ -96,8 +96,8 @@ const Hero: React.FC = () => {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <div className="flex gap-4">
               <a 
-                  href="/documents/Mouheb_Abdelhafidh_Resume.pdf"
-                  download="Mouheb_Abdelhafidh_Resume.pdf"
+                  href="/documents/Resume.pdf"
+                  download="Resume.pdf"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                 >
@@ -108,8 +108,8 @@ const Hero: React.FC = () => {
 
 
               <a 
-                  href="/documents/Mouheb_Abdelhafidh_CV.pdf"
-                  download="Mouheb_Abdelhafidh_CV.pdf"
+                  href="/documents/CVFrançais.pdf"
+                  download="CVFrançais.pdf"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                 >
