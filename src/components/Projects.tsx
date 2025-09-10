@@ -36,6 +36,14 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     tags: ['Time series', 'Statistics', 'R'],
     githubUrl: 'https://github.com/MouhebAbdelhafidh/Covid19-Deaths-Time-Series-Forecasting'
+  },
+  {
+    id: '5',
+    title: 'See-Through: ADAS using mmWave radar fusion',
+    description: 'A computer vision atomomous system that detects ,classifies, predicts velocity of objects on the road and tracks their movement.',
+    image: 'https://www.shutterstock.com/image-illustration/advanced-driver-assistance-systems-adas-600nw-2527686993.jpg',
+    tags: ['Computer Vision', 'Deep Learning'],
+    githubUrl: 'https://github.com/MouhebAbdelhafidh/See-Through'
   }
 ];
 

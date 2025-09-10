@@ -7,8 +7,8 @@ const About: React.FC = () => {
     {
       title: 'AI Intern',
       organization: 'ACTIA Engineering Services',
-      date: 'July 2025 - Present',
-      description: 'Building an ADAS system using radars fusion.',
+      date: 'July 2025 - September 2025',
+      description: 'Built an Advanced Driver Assistance System based on mmWave early sensor fusion.',
       icon: <Briefcase size={18} />,
     },
     {
