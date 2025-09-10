@@ -10,7 +10,7 @@ const blogPosts: BlogPost[] = [
     excerpt: 'A scientific paper about the implementation of a ReAct-based RAG agent for marketing strategy, outperforming traditional RAG systems.',
     date: 'May 20, 2025',
     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    url: 'documents/MARMT_ The Memory-Augmented Marketing Maestro - ReAct RAG with strategic retrieval Selection.pdf'
+    url: 'https://medium.com/@mouheb.abdelhafidh/marmt-the-memory-augmented-marketing-maestro-react-rag-with-strategic-retrieval-selection-f6101ab7bb0b'
   }
 ];
 
