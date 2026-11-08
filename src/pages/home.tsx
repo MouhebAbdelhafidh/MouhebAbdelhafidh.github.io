@@ -5,6 +5,9 @@ import { education, news, paperHref, profile, roles } from "@/data"
 export default function Home() {
   return (
     <>
+      <h1 className="sr-only">
+        Moheb Abdelhafidh (Mouheb Abdelhafidh) – AI Engineer &amp; Researcher
+      </h1>
       <section className="flow-root">
         <figure className="mx-auto mb-4 mt-1.5 w-[150px] sm:float-right sm:mb-3.5 sm:ml-7 sm:mr-0 sm:w-[210px]">
           <LoadingImage
