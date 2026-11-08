@@ -7,7 +7,7 @@ export default function Footer() {
         <span>© 2026 {profile.name}</span>
         <span className="flex flex-wrap gap-x-4 gap-y-1">
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="hover:text-link">
-            GitHub
+            GitHub: MouhebAbdelhafidh
           </a>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-link">
             LinkedIn
