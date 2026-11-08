@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paper</title>
+    <link rel="icon" type="image/jpeg" href="paper_favicon.jpg" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: Roboto, system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #f1f3f5;
+        color: #1c1e21;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: 40px;
+        padding: 0 14px;
+        background: #fff;
+        border-bottom: 1px solid #e6e8eb;
+        font-size: 14px;
+      }
+      header strong {
+        font-weight: 500;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      header a {
+        color: #2f6fd0;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      header a:hover {
+        text-decoration: underline;
+      }
+      iframe {
+        flex: 1;
+        width: 100%;
+        border: 0;
+        background: #fff;
+      }
+      .msg {
+        margin: 40px auto;
+        max-width: 420px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="./" id="back">&larr; Back</a>
+      <strong id="title">Paper</strong>
+      <a id="raw" href="#" target="_blank" rel="noopener noreferrer">Open PDF</a>
+    </header>
+    <iframe id="frame" title="Research paper"></iframe>
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(location.search)
+        var file = params.get("file") || ""
+        var title = params.get("title") || "Paper"
+
+        // favicon: CV gets its own icon, everything else the paper icon
+        var icon = params.get("kind") === "cv" ? "cv_favicon.jpg" : "paper_favicon.jpg"
+        document.querySelector('link[rel="icon"]').setAttribute("href", icon)
+
+        document.getElementById("title").textContent = title
+        document.title = title
+
+        // only plain PDF filenames from this folder: no paths, no external URLs
+        if (!/^[\w.\-]+\.pdf$/i.test(file)) {
+          document.getElementById("frame").remove()
+          document.getElementById("raw").remove()
+          var m = document.createElement("p")
+          m.className = "msg"
+          m.textContent = "Paper not found."
+          document.body.appendChild(m)
+          return
+        }
+
+        document.getElementById("frame").src = file
+        document.getElementById("raw").href = file
+      })()
+    </script>
+  </body>
+</html>

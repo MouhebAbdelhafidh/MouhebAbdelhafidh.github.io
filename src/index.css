@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Design tokens (shadcn-style) — light, minimal academic look */
+:root {
+  --background: #ffffff;
+  --foreground: #1c1e21;
+  --muted: #f1f3f5;
+  --muted-foreground: #5f6670;
+  --primary: #1c1e21;
+  --popover: #ffffff;
+  --popover-foreground: #1c1e21;
+  --border: #e6e8eb;
+  --link: #2f6fd0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-link: var(--link);
+  --color-ring: var(--link);
+  --font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Roboto Slab", Georgia, serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+/* hover-card open animation (Source component) */
+@keyframes hc-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+[data-slot="hover-card-content"][data-state="open"] {
+  animation: hc-in 0.12s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
