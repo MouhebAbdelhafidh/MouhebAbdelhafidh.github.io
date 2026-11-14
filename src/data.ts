@@ -489,3 +489,171 @@ export const projects: Project[] = [
     code: "https://github.com/MouhebAbdelhafidh/COVID-19-India-Deaths",
   },
 ]
+
+export type BlogBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  /** display equation, written in plain unicode */
+  | { type: "eq"; text: string }
+  | { type: "ol" | "ul"; items: string[] }
+  | { type: "table"; head: string[]; rows: string[][] }
+
+export type BlogPost = {
+  slug: string
+  title: string
+  topic: string
+  /** thumbnail in /public, shown beside the card */
+  image?: string
+  body: BlogBlock[]
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "latent-error-accumulation-video-world-models",
+    title:
+      "Mitigating latent error accumulation in autoregressive video world models: a research journey",
+    topic: "Video world models · V-JEPA 2 · Exposure bias",
+    image: "blog1_img.jpg",
+    body: [
+      {
+        type: "p",
+        text: "Autoregressive video generation and world modeling have advanced rapidly, driven by powerful self-supervised representations like **V-JEPA 2**. However, any autoregressive model faces a fundamental hurdle: **exposure bias**. When a model is trained exclusively via teacher forcing (using ground-truth history at every step) but forced to feed its own predictions back into itself during open-loop inference, small perturbations compound recursively. By step 10 or 20, minor temporal drifts spiral into complete out-of-distribution collapse.",
+      },
+      {
+        type: "p",
+        text: "This technical post details our research journey investigating, diagnosing, and ultimately solving latent error accumulation in causal V-JEPA 2 video predictors.",
+      },
+
+      { type: "h2", text: "1. The setup & causal architecture" },
+      {
+        type: "p",
+        text: "We built a **Causal Latent Predictor** operating on top of frozen tubelet features extracted from video datasets. To prevent future leakage, every temporal chunk is encoded independently, ensuring that latent state z_t depends strictly on past visual frames.",
+      },
+      {
+        type: "p",
+        text: "Given an initial context of frames, the autoregressive model predicts subsequent latent states sequentially:",
+      },
+      { type: "eq", text: "ẑₜ₊₁ = f_θ(ẑₜ)" },
+      {
+        type: "p",
+        text: "To evaluate long-horizon stability, we established an automated **\"Anticipate What's Next\"** evaluation suite, measuring multi-step rollout Mean Squared Error (MSE) and nearest-neighbor cosine similarity retrieval across extended horizons.",
+      },
+
+      { type: "h2", text: "2. The initial hypothesis: LSNI + RLCC" },
+      {
+        type: "p",
+        text: "Our initial research direction focused on regularizing the latent space using two modules:",
+      },
+      {
+        type: "ol",
+        items: [
+          "**Latent Scheduled Noise Injection (LSNI):** adding scaled Gaussian noise to input latents during training (z̃ₜ = α·zₜ + ε) to force robustness against perturbations.",
+          "**Reverse Latent Cycle-Consistency (RLCC):** enforcing a reverse prediction head to constrain trajectories.",
+        ],
+      },
+      { type: "h3", text: "The negative result" },
+      {
+        type: "p",
+        text: "When benchmarked against validation splits, our initial evaluation tables revealed a harsh reality: **the strong LSNI setting increased error accumulation**. At steps 9–12, error spiked significantly higher than the unregularized baseline, performing worse than simple persistence baselines.",
+      },
+
+      { type: "h2", text: "3. The mathematical problem: why isotropic noise fails" },
+      {
+        type: "p",
+        text: "To understand why our initial formulation failed, we must look at the mechanics of **Mean Squared Error (MSE) regression**. An MSE regressor learns to approximate the conditional expectation of the next state:",
+      },
+      { type: "eq", text: "f_θ(zₜ) ≈ 𝔼[ zₜ₊₁ | zₜ ]" },
+      {
+        type: "p",
+        text: "When input features are corrupted by isotropic Gaussian noise ε ~ 𝒩(0, σ²I), the optimization objective becomes:",
+      },
+      { type: "eq", text: "min_θ  𝔼_{zₜ, ε} [ ‖ f_θ(α·zₜ + ε) − zₜ₊₁ ‖² ]" },
+      { type: "h3", text: "The regression shrinkage trap" },
+      {
+        type: "p",
+        text: "Because inputs are randomized, the regressor cannot map sharp, deterministic transitions without penalty. To minimize MSE across noisy inputs, the network's optimal mathematical response is to **shrink its weights** and output a dampened conditional mean. This creates an immediate velocity damping (shrinkage bias).",
+      },
+      { type: "h3", text: "Compounding Jacobian drift" },
+      {
+        type: "p",
+        text: "During autoregressive rollout, predictions are fed recursively:",
+      },
+      { type: "eq", text: "ẑₜ₊₂ = f_θ( f_θ(ẑₜ) )" },
+      {
+        type: "p",
+        text: "Any initial distortion δ introduced at step 1 propagates through the system's Jacobian matrix J_f:",
+      },
+      { type: "eq", text: "Errorₖ ≈ Σ_{i=0}^{k−1} (J_f)^i · δ" },
+      {
+        type: "p",
+        text: "Because isotropic noise does not match the true covariance structure of rollout errors, the learned correction mechanism introduces a systematic bias that amplifies exponentially over time, causing rollout error to explode.",
+      },
+
+      {
+        type: "h2",
+        text: "4. The solution: rollout-aware training (the pushforward trick)",
+      },
+      {
+        type: "p",
+        text: "Recognizing that artificial noise addresses symptoms rather than root causes, we pivoted to **rollout-aware training**. Instead of clean teacher-forced inputs, the model is trained directly on its own multi-step predictions using the **pushforward trick** (detaching intermediate gradients to keep backpropagation stable):",
+      },
+      {
+        type: "eq",
+        text: "L_rollout = (1/K) Σ_{k=1}^{K} ‖ f_θ^(k)(zₜ) − zₜ₊ₖ ‖²,   with stop_grad(ẑ)",
+      },
+      { type: "h3", text: "Why it works mathematically" },
+      {
+        type: "p",
+        text: "By exposing the model to its own accumulated errors during training, the optimizer adjusts the weights of f_θ so that its multi-step Jacobian product (J_f)^k contracts toward the true data manifold. This eliminates covariate shift between training and inference.",
+      },
+
+      { type: "h2", text: "5. Empirical results & zero-shot generalization" },
+      {
+        type: "p",
+        text: "We evaluated our rollout-trained model (`--lambda_roll 1.0`) across rigorous validation and held-out test splits, including a zero-shot cross-domain evaluation on **19,796 validation clips from Kinetics-400** (moving entirely out-of-distribution from SSv2).",
+      },
+      { type: "h3", text: "Kinetics-400 zero-shot rollout comparison (horizon = 12)" },
+      {
+        type: "table",
+        head: [
+          "Horizon",
+          "Control baseline MSE",
+          "Rollout-trained MSE",
+          "Difference (rollout vs control)",
+        ],
+        rows: [
+          ["**Step 1**", "0.6406", "0.2925", "-0.3481 ± 0.0035"],
+          ["**Step 4**", "0.9988", "0.6397", "-0.3591 ± 0.0041"],
+          ["**Step 8**", "1.2152", "0.8149", "-0.4003 ± 0.0043"],
+          ["**Step 12**", "1.3873", "0.9690", "-0.4183 ± 0.0045"],
+          ["**Mean**", "1.1004", "0.7159", "-0.3846 ± 0.0036"],
+          ["**Steps 9–12**", "1.3170", "0.9028", "-0.4141 ± 0.0042"],
+        ],
+      },
+      { type: "h3", text: "Key takeaways from the results" },
+      {
+        type: "ol",
+        items: [
+          "**Zero step-1 penalty:** short-term predictive sharpness is fully preserved.",
+          "**Widening margin:** the performance gap grows larger with time, proving the model successfully resists error accumulation.",
+          "**Cross-domain robustness:** without seeing a single Kinetics-400 video during training, the rollout model outperforms the control baseline by over 35% across extended horizons.",
+        ],
+      },
+
+      { type: "h2", text: "6. Conclusion" },
+      {
+        type: "p",
+        text: "This project underscores a vital lesson in machine learning research: **negative results are not failures; they are precise diagnostics.** Naive noise injection induces regression shrinkage and compounding Jacobian drift, whereas rollout-aware training directly resolves exposure bias.",
+      },
+      { type: "h3", text: "Resources & repository" },
+      {
+        type: "ul",
+        items: [
+          "**GitHub repository:** [Mitigation-of-Latent-Error-Accumulation-in-Autoregressive-Video-Models](https://github.com/MouhebAbdelhafidh/Mitigation-of-Latent-Error-Accumulation-in-Autoregressive-Video-Models)",
+          "**Underlying representation:** Meta AI's V-JEPA 2 framework ([arXiv:2506.09985](https://arxiv.org/abs/2506.09985))",
+        ],
+      },
+    ],
+  },
+]

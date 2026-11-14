@@ -5,6 +5,8 @@ import { FadeArc } from "@/components/fade-arc"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 
+const Blog = lazy(() => import("@/pages/blog"))
+const BlogPost = lazy(() => import("@/pages/blog-post"))
 const Engineering = lazy(() => import("@/pages/engineering"))
 const Home = lazy(() => import("@/pages/home"))
 const Research = lazy(() => import("@/pages/research"))
@@ -34,6 +36,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<Research />} />
             <Route path="/engineering" element={<Engineering />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>

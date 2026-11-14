@@ -61,6 +61,9 @@ export default function Header() {
           <NavLink to="/engineering" className={navClass}>
             engineering
           </NavLink>
+          <NavLink to="/blog" className={navClass}>
+            blog
+          </NavLink>
           <a
             href={cvHref}
             target="_blank"
